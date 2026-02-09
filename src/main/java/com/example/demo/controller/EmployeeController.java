@@ -67,5 +67,12 @@ public class EmployeeController {
 		 return service.findByEmpSalary(empSalary);
 		
 	}
+	
+	@GetMapping("/getEmployeeByName/{empName}")
+	public ResponseEntity<Employees> getEmployeebyName(@PathVariable String empName)
+	{
+		Employees emp=service.getEmployeeByName(empName);
+		return ResponseEntity.ok(emp);
+	}
 
 }

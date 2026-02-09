@@ -81,4 +81,10 @@ public class EmployeeService implements IEmployeeService {
 		return repo.findByEmpSalaryGreaterThan(empSalary);
 	}
 
+	@Override
+	public Employees getEmployeeByName(String empName) {
+		
+		return repo.getEmployeebyName(empName);
+	}
+
 }

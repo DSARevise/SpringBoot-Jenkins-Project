@@ -13,4 +13,5 @@ public interface IEmployeeService {
 	public List<Employees> getAllEmployeeList();
 	public List<Employees> findByEmpSalary(double empSalary);
 
+	public Employees getEmployeeByName(String empName);
 }
