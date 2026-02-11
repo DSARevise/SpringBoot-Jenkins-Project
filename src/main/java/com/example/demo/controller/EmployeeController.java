@@ -26,6 +26,11 @@ public class EmployeeController {
 	@Autowired
 	IEmployeeService service;
 
+	@GetMapping("/getData")
+	public String getGreeting() {
+		return "Checking on docker";
+	}
+
 	@PostMapping("/insert")
 	public ResponseEntity<Employees> insertEmployees(@RequestBody EmployeeDTO dto) {
 
@@ -64,14 +69,13 @@ public class EmployeeController {
 
 	@GetMapping("/getEmpBySalary/{empSalary}")
 	public List<Employees> getEmpBySalary(double empSalary) {
-		 return service.findByEmpSalary(empSalary);
-		
+		return service.findByEmpSalary(empSalary);
+
 	}
-	
+
 	@GetMapping("/getEmployeeByName/{empName}")
-	public ResponseEntity<Employees> getEmployeebyName(@PathVariable String empName)
-	{
-		Employees emp=service.getEmployeeByName(empName);
+	public ResponseEntity<Employees> getEmployeebyName(@PathVariable String empName) {
+		Employees emp = service.getEmployeeByName(empName);
 		return ResponseEntity.ok(emp);
 	}
 
